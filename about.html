@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gallery</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+        <style>
+            body{
+  margin-left: 0;
+  padding: 0;
+  font-family: Quicksand;
+  background-image: url(img/4237.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+}
+nav{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 100px;
+  box-sizing: border-box;
+  transition: .3s;
+}
+nav.black{
+  background: rgba(0,0,0,0.8);
+  height: 100px;
+  padding: 10px 100px;
+
+}
+nav .logo{
+  padding: 22px 20px;
+  height: 80px;
+  float: left;
+  font-synthesis: 20px;
+  transition: .3s;
+        font-size: 40px;
+        }
+nav ul{
+  list-style: none;
+  float: right;
+  margin-left: 0px;
+  padding:0;display: flex;
+
+
+}
+
+
+nav ul li{
+  list-style-type: none;
+}
+nav ul li a{
+  line-height: 80px;
+  color: #151515;
+  padding: 12px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s;
+}
+nav.black ul li a{
+  color: #fff;
+}
+nav ul li a:focus{
+  outline: none;
+}
+nav ul li a:active{
+  background: #E2472F;
+  color: #fff;
+  border-radius: 6px;
+}
+/*Footer Area Stylesheet*/
+#myFooter {
+  background-color: #182c39;
+  color: white;
+  padding-top: 20px;
+}
+
+#map-container {
+  height: 240px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#myFooter .row {
+  margin: 0 85px;
+}
+
+#myFooter .footer-copyright {
+  background-color: #10222e;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+#myFooter .footer-copyright p {
+  margin: 10px;
+  color: #ccc;
+}
+
+#myFooter .container {
+  width: auto;
+}
+
+#myFooter ul {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.7;
+}
+
+#myFooter h5 {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  margin-top: 30px;
+}
+#myFooter a {
+  color: #d2d1d1;
+  text-decoration: none;
+}
+#myFooter a:hover,
+#myFooter a:focus {
+  text-decoration: none;
+  color: white;
+}
+
+#myFooter .social-networks {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 38px;
+}
+
+#myFooter .fa {
+  font-size: 30px;
+  margin-right: 15px;
+  margin-left: 20px;
+  background-color: white;
+  color: #182c39;
+  border-radius: 51%;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 31px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#myFooter .fa-facebook:hover {
+  color: #2b55ff;
+}
+
+#myFooter .fa-facebook:focus {
+  color: #2b55ff;
+}
+
+#myFooter .fa-google-plus:hover {
+  color: red;
+}
+
+#myFooter .fa-google-plus:focus {
+  color: red;
+}
+
+#myFooter .fa-twitter:hover {
+  color: #00aced;
+}
+
+#myFooter .fa-twitter:focus {
+  color: #00aced;
+}
+
+@media screen and (max-width: 767px) {
+  #myFooter {
+      text-align: center;
+  }
+  #myFooter .row {
+      margin: 0;
+  }
+}
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+html{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  height: 100%;
+}
+
+.content{
+ flex: 1 0 auto;
+ -webkit-flex: 1 0 auto;
+ min-height: 200px;
+}
+
+#myFooter{
+ flex: 0 0 auto;
+ -webkit-flex: 0 0 auto;
+}
+.team-area {
+  background-color: #f9f9ff;
+}
+
+.team-area .thumb {
+  position: relative;
+}
+
+.team-area .thumb div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(246, 33, 75, 0.8);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.team-area .thumb div i {
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  z-index: 9999;
+}
+
+.team-area .thumb img {
+  display: block;
+  width: 100%;
+}
+
+.team-area .thumb div span {
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.team-area .thumb div p {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-weight: 100;
+}
+
+@media (max-width: 768px) {
+  .team-area .thumb div p {
+    bottom: -15px;
+  }
+}
+
+.team-area .thumb:hover div {
+  cursor: pointer;
+  opacity: 1;
+}
+.story-img{
+    height: 250px;
+    width: 400px;
+    background-position: center;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+marquee{
+    direction="left";
+     loop="7";
+     scrollamount="1";
+     scrolldelay="2";
+     behavior="alternate";
+     width="60%";
+}
+.page .text-gray-sec{
+    color: white;
+}
+.text-regular{
+    font-weight: 400;
+}
+.FAQ-text{
+    font-size: 20px;
+   
+}
+h4{
+    font-size: 34px;
+    line-height: 1.5;
+    font-family: Montserrat,'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+.text-white{
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.5;
+    font-family:Montserrat,'Times New Roman', Times, serif;
+    font-weight: 700;
+     text-align: center;
+     box-sizing: border-box;
+
+}
+h4 + h2{
+        margin-top:20px;
+    }
+   .trainer-name{
+    color:black;       
+   }
+    
+        </style>
+        
+    </head>
+    <body>
+            <div class="wrapper">
+                    <nav style="background-color:lightgrey">
+                        <div class="logo" style="color:indianred">Fitness</div>
+                        <ul>
+                            <li><a href="file:///C:/Users/hp/Desktop/project/index.html#">Home</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="excecise.html">Excersies</a></li>
+                            <li><a href="about.html">About us</a></li>
+                            <li><a class="active" href="file:///C:/Users/hp/Desktop/project/project/log.html">login</a></li>
+                        </ul>
+                    </nav>
+                    </div>
+            <!----------------------story Area-------------------->
+                    <section class="story-area section-gap" id="story">
+                        <div class="container">
+                            <div class="row">
+                            <div class="col-lg-12 st-heading-txt">
+                                
+                            <h1 class="mb-10" style="text-align:center;font-family:Montserrat,'Times New Roman', Times, serif">
+                                OVERVIEW
+                            </h1>
+                            </div>
+                            <div class="col-lg-5" >
+                                <img class="story-img" src="img/storyimg.jpg">
+                            </div>
+                            <div class="col-lg-7" >
+                               <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" >
+                                My definition of training is: “making your MIND comfortable with the fact that your BODY is going to be a little uncomfortable”.
+                                 People who don’t like to exercise usually just don’t like to be uncomfortable, but getting out of our comfort zones – mentally or physically – is where positive change happens.
+                                  Nobody improves while sitting under a warm fuzzy blanket. My specialty is helping people to get out of their comfort zones whether it’s for a minute or an hour.
+                                 I can’t make someone want to get stronger, leaner or fitter, but if they want to do it, I’m with them all the way!
+                        
+                            </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <marquee
+                        direction="rigtht"
+                        loop="3"
+                        scrollamount="1"
+                        scrolldelay="2"
+                        behavior="alternate"
+                        width="50%"
+                                >
+                                    <h1 class="mb-10" style="text-align:center;font-family:Montserrat,'Times New Roman', Times, serif">
+                                            My Message
+                                        </h1></marquee>
+                                        <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" >
+                                                If I can get this fit, so can most anyone. If you look at me and think I’ve never struggled with my
+                                                 weight or that I’ve been fit and athletic my whole life, you’d be completely wrong! From 16 – 22, 
+                                                 when I should’ve been in the best shape of my life, I was 20 to 25 lbs. heavier than I am now.
+                                            </p>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                    <marquee 
+                                    
+     direction="left"
+     loop="3"
+     scrollamount="1"
+     scrolldelay="2"
+     behavior="alternate"
+     width="60%" >
+                                    <h1 class="mb-10" style="text-align:center;font-family:Montserrat,'Times New Roman', Times, serif">
+                                            My Challlenge
+                                        </h1>
+                                        </marquee>
+                                        <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" >
+                                            I do not consider myself genetically blessed. I don’t have the perfect set of genes. What I do have is a lot of stubbornness and a little OCD.
+                                             According to all my doctors, I should not be able to do what I do.
+                                             I should not be able to perform at the level I do and I should be in chronic pain.
+                                            </p>
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+
+
+<!-----------Story End -->
+<!--------FAQ------------------->
+<section class="section-lg bg-image" style="background-image:url(img/FAQ.jpg); background-repeat: no-repeat;background-attachment: fixed;background-position: center " >
+    <div class="sec-img">
+<div class="shell">
+    <h4 class="text-gray-sec text-regular" style="font-color:white">
+        Some of Your Questions
+    </h4>
+    <h2 class="text-white"> 
+        FAQ
+    </h2>
+</div>
+<div class="container">
+                   <div class="row">
+                       <div class="col-lg-6">
+                           <h4 class="FAQ-text">1. How many days per week do I need to work out? </h4>
+                            <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: white">Depending on your health and fitness goals, you’ll need to commit to a minimum of 3 days of exercise each week to see results.
+                                Any fewer than that and each workout will feel like you’re starting all over again each and every time.</p>< </div>
+                       <div class="col-lg-6">
+                            <h4 class="FAQ-text">2. I haven’t done any exercise in a few years. Can I jump straight into personal training? </h4>
+                            <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: white">Definitely, personal training caters for all fitness levels.
+                                 Combining personal training sessions with your fitness routine is a great way to blast through barriers and achieve your fitness goals faster.</p>
+                       </div>
+                   </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-lg-6">
+                        <h4 class="FAQ-text">1. How many days per week do I need to work out?</h4>
+                        <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white">Depending on your health and fitness goals, you’ll need to commit to a minimum of 3 days of exercise each week to see results.
+                            Any fewer than that and each workout will feel like you’re starting all over again each and every time.</p>
+                        </div>
+                   <div class="col-lg-6">
+                        <h4 class="FAQ-text">2. I haven’t done any exercise in a few years. Can I jump straight into personal training? </h4>
+                        <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color:white">Definitely, personal training caters for all fitness levels.
+                             Combining personal training sessions with your fitness routine is a great way to blast through barriers and achieve your fitness goals faster.</p>
+                   </div>
+                   </div>
+
+      </div>
+    </div>
+
+</section>
+<!-----------------End OF FAQ-->
+
+                  <!-- Start team Area -->
+			<section class="team-area section-gap" id="trainer">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center">
+                            <div class="menu-content pb-70 col-lg-8">
+                                <div class="title text-center">
+                                    <h1 class="mb-10">Our Experienced Trainers</h1>
+                                    <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Who are in extremely love with eco friendly system.</p>
+                                </div>
+                            </div>
+                        </div>						
+                        <div class="row justify-content-center d-flex align-items-center">
+                            <div class="col-md-3 single-team">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="img/t1.jpg" alt="">
+                                    <div class="align-items-center justify-content-center d-flex">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="meta-text mt-30 text-center">
+                                    <h4 class="trainer-name">Rahul Kumar</h4>
+                                    <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> Managing Director</p>									    	
+                                </div>
+                            </div>
+                            <div class="col-md-3 single-team">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="img/t2.jpg" alt="">
+                                    <div class="align-items-center justify-content-center d-flex">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="meta-text mt-30 text-center">
+                                    <h4 class="trainer-name">Sonu Kumar</h4>
+                                    <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Master Trainer<br>Crossfit Level 1 Coach<br>
+                                        Personal Trainer
+
+                                    </p>			    	
+                                </div>
+                            </div>	
+                            <div class="col-md-3 single-team">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="img/t3.jpg" alt="">
+                                    <div class="align-items-center justify-content-center d-flex">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="meta-text mt-30 text-center">
+                                    <h4 class="trainer-name">Arun Singh</h4>
+                                    <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Weight Training<br>Weight Loss & Weight Gain</p>			    	
+                                </div>
+                            </div>	
+                            <div class="col-md-3 single-team">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="img/t4.jpg" alt="">
+                                    <div class="align-items-center justify-content-center d-flex">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="meta-text mt-30 text-center">
+                                    <h4 class="trainer-name">Rahul Passi</h4>
+                                    <p style="padding: 10px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> Cardio Training<br>Streching<br>
+                                        Shape and Tone Up
+                                    </p>			    	
+                                </div>
+                            </div>																		
+                        </div>
+                    </div>	
+                </section>
+                <!-- End team Area -->	
+
+
+
+                <!-----------Brands-->
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+<!------------------footer area----------------->
+<footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Here we use the Google Embed API to show Google Maps. -->
+            <!-- In order for this to work in your project you will need to generate a unique API key.  -->
+            
+            
+             <iframe id="map-container" 
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.642387423342!2d75.84565601474998!3d30.868685781589893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a825e1608539b%3A0x910841310cc26e7b!2sGatsun+Enterprise!5e0!3m2!1sen!2sin!4v1540395674034" frameborder="0" style="border:0"></iframe>
+        </div>
+        
+        <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/117485746003897901837?socpid=247&socfid=maps_embed:logincontrol" class="google"><i class="fa fa-google-plus"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2016 Copyright Text </p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </body>
+    </html>                
+   
